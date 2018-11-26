@@ -1,11 +1,12 @@
 import React, {Component, Fragment} from 'react';
-import {BrowserRouter as Router} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import './App.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import NavBar from './NavBar/NavBar';
 import User from './User/User';
 import Panel from './Panel/Panel';
 import {createMuiTheme, MuiThemeProvider} from "@material-ui/core/styles";
+import MessagePanel from './MessagePanel/MessagePanel';
 import blue from '@material-ui/core/colors/blueGrey';
 import red from '@material-ui/core/colors/red';
 import pink from '@material-ui/core/colors/pink';
@@ -37,9 +38,9 @@ class App extends Component {
             <Router>
               <div>
                 <NavBar></NavBar>
-                <User></User>
-                <Panel></Panel>
-                <Panel></Panel>
+                <Route path="/" exact render={() => <MessagePanel title="Select User">
+                  No user selected - search for a GitHub user using the search bar above</MessagePanel>}/>
+                <Route path="/:user" component={User}/>
               </div>
             </Router>
           </MuiThemeProvider>
