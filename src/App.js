@@ -1,12 +1,12 @@
 import React, {Component, Fragment} from 'react';
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Provider as StoreProvider } from 'react-redux';
 import './App.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import NavBar from './NavBar/NavBar';
-import User from './User/User';
-import Panel from './Panel/Panel';
+import NavBar from './components/NavBar/NavBar';
+import UserContainer from './containers/UserContainer';
 import {createMuiTheme, MuiThemeProvider} from "@material-ui/core/styles";
-import MessagePanel from './MessagePanel/MessagePanel';
+import MessagePanel from './components/MessagePanel/MessagePanel';
 import blue from '@material-ui/core/colors/blueGrey';
 import red from '@material-ui/core/colors/red';
 import pink from '@material-ui/core/colors/pink';
@@ -14,6 +14,7 @@ import pink from '@material-ui/core/colors/pink';
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.theme = createMuiTheme({
       palette: {
         primary: blue,
@@ -34,16 +35,18 @@ class App extends Component {
     return (
         <Fragment>
           <CssBaseline/>
-          <MuiThemeProvider theme={this.theme}>
-            <Router>
-              <div>
-                <NavBar></NavBar>
-                <Route path="/" exact render={() => <MessagePanel title="Select User">
-                  No user selected - search for a GitHub user using the search bar above</MessagePanel>}/>
-                <Route path="/:user" component={User}/>
-              </div>
-            </Router>
-          </MuiThemeProvider>
+          <StoreProvider store={this.props.store}>
+            <MuiThemeProvider theme={this.theme}>
+              <Router>
+                <div>
+                  <NavBar></NavBar>
+                  <Route path="/" exact render={() => <MessagePanel title="Select User">
+                    No user selected - search for a GitHub user using the search bar above</MessagePanel>}/>
+                  <Route path="/:user" component={UserContainer}/>
+                </div>
+              </Router>
+            </MuiThemeProvider>
+          </StoreProvider>
         </Fragment>
     );
   }
