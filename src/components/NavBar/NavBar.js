@@ -65,7 +65,7 @@ const styles = theme => ({
 });
 
 function NavBar(props) {
-  const { classes } = props;
+  const { classes, searchHandler } = props;
 
   return (
       <div className={classes.root}>
@@ -85,6 +85,8 @@ function NavBar(props) {
                     root: classes.inputRoot,
                     input: classes.inputInput,
                   }}
+                  onChange={(e) => {console.log(e);}}
+                  onKeyPress={(e) => {e.charCode === 13 && searchHandler(e.target.value)}}
               />
             </div>
           </Toolbar>

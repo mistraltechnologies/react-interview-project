@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider as StoreProvider } from 'react-redux';
 import './App.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import NavBar from './components/NavBar/NavBar';
+import NavBarContainer from './containers/NavBarContainer';
 import UserContainer from './containers/UserContainer';
 import {createMuiTheme, MuiThemeProvider} from "@material-ui/core/styles";
 import MessagePanel from './components/MessagePanel/MessagePanel';
@@ -39,10 +39,10 @@ class App extends Component {
             <MuiThemeProvider theme={this.theme}>
               <Router>
                 <div>
-                  <NavBar></NavBar>
+                  <NavBarContainer/>
                   <Route path="/" exact render={() => <MessagePanel title="Select User">
                     No user selected - search for a GitHub user using the search bar above</MessagePanel>}/>
-                  <Route path="/:user" component={UserContainer}/>
+                  <Route path="/user/:user" component={UserContainer}/>
                 </div>
               </Router>
             </MuiThemeProvider>
