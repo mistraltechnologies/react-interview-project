@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import User from '../components/User/User';
 import Waiting from "../components/Waiting/Waiting";
 import {bindActionCreators} from "redux";
-import loadUser from "../store/loadUserAction";
+import loadUser from "../store/loadUserActionDummy";
 
 class UserContainer extends Component {
 

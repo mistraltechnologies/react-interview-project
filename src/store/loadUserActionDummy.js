@@ -65,11 +65,53 @@ const loadUser = (login) => {
                   "public_members_url": "https://api.github.com/orgs/DROPCitizenShip/public_members{/member}",
                   "avatar_url": "https://avatars1.githubusercontent.com/u/4604446?v=4",
                   "description": ""
+                },
+                {
+                  "login": "DROPCitizenShip",
+                  "id": 4604446,
+                  "node_id": "MDEyOk9yZ2FuaXphdGlvbjQ2MDQ0NDY=",
+                  "url": "https://api.github.com/orgs/DROPCitizenShip",
+                  "repos_url": "https://api.github.com/orgs/DROPCitizenShip/repos",
+                  "events_url": "https://api.github.com/orgs/DROPCitizenShip/events",
+                  "hooks_url": "https://api.github.com/orgs/DROPCitizenShip/hooks",
+                  "issues_url": "https://api.github.com/orgs/DROPCitizenShip/issues",
+                  "members_url": "https://api.github.com/orgs/DROPCitizenShip/members{/member}",
+                  "public_members_url": "https://api.github.com/orgs/DROPCitizenShip/public_members{/member}",
+                  "avatar_url": "https://avatars1.githubusercontent.com/u/4604446?v=4",
+                  "description": ""
+                },
+                {
+                  "login": "DROPCitizenShip",
+                  "id": 4604446,
+                  "node_id": "MDEyOk9yZ2FuaXphdGlvbjQ2MDQ0NDY=",
+                  "url": "https://api.github.com/orgs/DROPCitizenShip",
+                  "repos_url": "https://api.github.com/orgs/DROPCitizenShip/repos",
+                  "events_url": "https://api.github.com/orgs/DROPCitizenShip/events",
+                  "hooks_url": "https://api.github.com/orgs/DROPCitizenShip/hooks",
+                  "issues_url": "https://api.github.com/orgs/DROPCitizenShip/issues",
+                  "members_url": "https://api.github.com/orgs/DROPCitizenShip/members{/member}",
+                  "public_members_url": "https://api.github.com/orgs/DROPCitizenShip/public_members{/member}",
+                  "avatar_url": "https://avatars1.githubusercontent.com/u/4604446?v=4",
+                  "description": ""
+                },
+                {
+                  "login": "DROPCitizenShip",
+                  "id": 4604446,
+                  "node_id": "MDEyOk9yZ2FuaXphdGlvbjQ2MDQ0NDY=",
+                  "url": "https://api.github.com/orgs/DROPCitizenShip",
+                  "repos_url": "https://api.github.com/orgs/DROPCitizenShip/repos",
+                  "events_url": "https://api.github.com/orgs/DROPCitizenShip/events",
+                  "hooks_url": "https://api.github.com/orgs/DROPCitizenShip/hooks",
+                  "issues_url": "https://api.github.com/orgs/DROPCitizenShip/issues",
+                  "members_url": "https://api.github.com/orgs/DROPCitizenShip/members{/member}",
+                  "public_members_url": "https://api.github.com/orgs/DROPCitizenShip/public_members{/member}",
+                  "avatar_url": "https://avatars1.githubusercontent.com/u/4604446?v=4",
+                  "description": ""
                 }
               ]
         }
       });
-    }, 3000);
+    }, 1000);
 
     setTimeout(() => {
       console.log("response received");
@@ -662,7 +704,7 @@ const loadUser = (login) => {
           }
         ]
       });
-    }, 3000);
+    }, 1000);
   }
 };
 
