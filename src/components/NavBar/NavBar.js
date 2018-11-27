@@ -95,6 +95,7 @@ function NavBar(props) {
 
 NavBar.propTypes = {
   classes: PropTypes.object.isRequired,
+  searchHandler: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(NavBar);

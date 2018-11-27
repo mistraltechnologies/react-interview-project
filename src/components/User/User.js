@@ -77,6 +77,9 @@ function User(props) {
 
 User.propTypes = {
   classes: PropTypes.object.isRequired,
+  user: PropTypes.object.isRequired,
+  orgs: PropTypes.array.isRequired,
+  repos: PropTypes.array.isRequired
 };
 
 export default withStyles(styles)(User);

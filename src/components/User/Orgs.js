@@ -2,6 +2,7 @@ import Card from "@material-ui/core/Card/Card";
 import Typography from "@material-ui/core/Typography/Typography";
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
+import PropTypes from "prop-types";
 
 const styles = theme => ({
   title: {
@@ -58,5 +59,11 @@ function Orgs(props) {
       </div>
   );
 }
+
+Orgs.propTypes = {
+  classes: PropTypes.object.isRequired,
+  orgs: PropTypes.array.isRequired
+};
+
 
 export default withStyles(styles)(Orgs);
