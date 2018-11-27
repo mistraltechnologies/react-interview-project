@@ -27,7 +27,10 @@ class App extends Component {
         // two indexes within its tonal palette.
         // E.g., shift from Red 500 to Red 300 or Red 700.
         tonalOffset: 0.2,
-      }
+      },
+      typography: {
+        useNextVariants: true,
+      },
     });
   }
 
