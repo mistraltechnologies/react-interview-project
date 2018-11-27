@@ -60,7 +60,7 @@ function User(props) {
               id="company"
               label="Company"
               className={classes.textField}
-              value={user.company}
+              value={user.company ? user.company : 'n/a'}
               margin="normal"
               InputProps={{
                 readOnly: true,
