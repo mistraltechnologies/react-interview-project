@@ -1,44 +1,45 @@
+# About GitHubber
+
+This project aims to satisfy the requirements of the alanrubin/react-interview-project by providing
+a Web UI for retrieving repositories and organisations associated with a GitHub user.
+
+To search, type a user login name in the search field and press enter.
+
+If the user exists and can be retrieved, the user's name and company is displayed along with a list
+of organisations and repositories.
+
+If the user does not exist or the api returns an error then a general
+error message is displayed instead.
+
+Searching for a user causes the URL to change. The search term is added to the URL in the form /user/:user,
+where :user is the search term.
+
+Searching can also be initiated by updating the URL or refreshing the browser. This allows search results
+to be bookmarked and accessed directly as a deep link.
+
+The application is responsive and works well on mobile as well as desktop devices.
+
+## Bonus Points
+
+The following items from the bonus section have been implemented:
+
+- Use of ES6 syntax
+- Using a spinner
+- Dealing with errors
+- Use of Material UI for components
+- Use of React Router
+- State management (through Redux only)
+- Tools use (code formatting and linting through IntelliJ Idea, dockerization)
+
+It saddens me to say that due to time constraints, unit and integration tests are not implemented, but will follow shortly.
+
+## Hosting
+
+The project is up and running in a docker container on a Digital Ocean droplet [here](http://206.189.245.148/).
+
+---
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+All the usual npm commands apply.
