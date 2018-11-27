@@ -12,9 +12,6 @@ const styles = theme => ({
   root: {
     width: '100%',
   },
-  grow: {
-    flexGrow: .5
-  },
   title: {
     display: 'none',
     [theme.breakpoints.up('sm')]: {
@@ -22,7 +19,7 @@ const styles = theme => ({
     },
   },
   search: {
-    position: 'relative',
+    position: 'absolute',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
     '&:hover': {
@@ -34,6 +31,8 @@ const styles = theme => ({
       marginLeft: theme.spacing.unit,
       width: 'auto',
     },
+    left: '50%',
+    transform: 'translateX(-50%)'
   },
   searchIcon: {
     width: theme.spacing.unit * 9,
@@ -74,7 +73,6 @@ function NavBar(props) {
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
               GitHubber
             </Typography>
-            <div className={classes.grow} />
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
