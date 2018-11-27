@@ -14,13 +14,13 @@ class UserContainer extends Component {
   }
 
   isUserLoaded() {
-    const {user, match} = this.props;
-    return (user && user.login === match.params.user);
+    const {user, orgs, repos} = this.props;
+    return user != null && orgs != null && repos != null;
   }
 
   renderUser() {
-    const {user} = this.props;
-    return <User name={user.name}/>
+    const {user, orgs, repos} = this.props;
+    return <User user={user} orgs={orgs} repos={repos}/>
   }
 
   renderWaiting() {
@@ -29,7 +29,7 @@ class UserContainer extends Component {
   }
 
   componentDidMount() {
-    if (! this.isUserLoaded()) {
+    if (!this.isUserLoaded()) {
       const login = this.props.match.params.user;
       this.props.loadUser(login);
     }
@@ -39,6 +39,8 @@ class UserContainer extends Component {
 const mapStateToProps = state => {
   return {
     user: state.user,
+    orgs: state.orgs,
+    repos: state.repos
   }
 };
 
