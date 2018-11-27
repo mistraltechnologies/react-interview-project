@@ -3,19 +3,35 @@ import {connect} from 'react-redux';
 import User from '../components/User/User';
 import Waiting from "../components/Waiting/Waiting";
 import {bindActionCreators} from "redux";
-import loadUser from "../store/loadUserActionDummyNoData";
+import loadUser from "../store/loadUserAction";
+import MessagePanel from "../components/MessagePanel/MessagePanel";
 
 class UserContainer extends Component {
 
   render() {
     console.log(this.props);
 
-    return this.isUserLoaded() ? this.renderUser() : this.renderWaiting();
+    if (this.isError()) {
+      return this.renderError();
+    } else if (this.isUserLoaded()) {
+      return this.renderUser();
+    } else {
+      return this.renderWaiting();
+    }
+  }
+
+  isError() {
+    return this.props.error;
   }
 
   isUserLoaded() {
     const {user, orgs, repos} = this.props;
     return user != null && orgs != null && repos != null;
+  }
+
+  renderError() {
+    const login = this.props.match.params.user;
+    return <MessagePanel type="error" title="User unavailable">User '{login}' does not exist or cannot be accessed</MessagePanel>
   }
 
   renderUser() {
@@ -49,7 +65,8 @@ const mapStateToProps = state => {
     user: state.user,
     orgs: state.orgs,
     repos: state.repos,
-    targetUser: state.targetUser
+    targetUser: state.targetUser,
+    error: state.error
   }
 };
 

@@ -40,7 +40,7 @@ class App extends Component {
               <Router>
                 <div>
                   <NavBarContainer/>
-                  <Route path="/" exact render={() => <MessagePanel title="Select User">
+                  <Route path="/" exact render={() => <MessagePanel type="info" title="Select User">
                     No user selected - search for a GitHub user using the search bar above</MessagePanel>}/>
                   <Route path="/user/:user" component={UserContainer}/>
                 </div>

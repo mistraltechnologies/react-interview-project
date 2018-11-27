@@ -15,15 +15,22 @@ const styles = theme => ({
     marginRight: 'auto',
     marginTop: theme.spacing.unit * 2
   },
+  info: {
+    color: theme.palette.primary.dark
+  },
+  error: {
+    color: theme.palette.error.dark
+  }
 });
 
 function messagePanel(props) {
-  const { classes } = props;
+  const { classes, type } = props;
+  const typeClass = type === 'info' ? classes.info : classes.error;
 
   return (
       <div>
         <Paper className={classes.root} elevation={1}>
-          <Typography variant="h5" component="h3">
+          <Typography variant="h5" component="h3" className={typeClass}>
             {props.title}
           </Typography>
           <Typography component="p">
@@ -36,6 +43,7 @@ function messagePanel(props) {
 
 messagePanel.propTypes = {
   classes: PropTypes.object.isRequired,
+  type: PropTypes.oneOf(['error', 'info']).isRequired,
 };
 
 export default withStyles(styles)(messagePanel);

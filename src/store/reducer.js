@@ -1,4 +1,4 @@
-import {SEARCH, USER_AND_ORGS_LOADED, USER_LOADING, USER_REPOS_LOADED} from "./actionTypes";
+import {API_ERROR, SEARCH, USER_AND_ORGS_LOADED, USER_LOADING, USER_REPOS_LOADED} from "./actionTypes";
 
 const initialState = {};
 
@@ -14,7 +14,8 @@ const rootReducer = (state = initialState, action) => {
         user: null,
         orgs: null,
         repos: null,
-        targetUser: action.login
+        targetUser: action.login,
+        error: null
       });
     }
 
@@ -51,6 +52,16 @@ const rootReducer = (state = initialState, action) => {
         return state;
       }
     }
+
+    case API_ERROR:
+      const {code} = action;
+
+      console.log("API error - code:");
+      console.log(code);
+
+      return Object.assign({}, state, {
+        error: "error"
+      });
 
     default:
       return state;
