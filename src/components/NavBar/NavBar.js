@@ -83,7 +83,6 @@ function NavBar(props) {
                     root: classes.inputRoot,
                     input: classes.inputInput,
                   }}
-                  onChange={(e) => {console.log(e);}}
                   onKeyPress={(e) => {e.charCode === 13 && searchHandler(e.target.value)}}
               />
             </div>

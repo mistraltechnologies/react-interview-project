@@ -2,7 +2,7 @@ import {USER_AND_ORGS_LOADED, USER_LOADING, USER_REPOS_LOADED} from "./actionTyp
 
 const loadUser = (login) => {
   return (dispatch) => {
-    console.log("github call started");
+    console.log("Simulating call to GitHub");
 
     dispatch({
       type: USER_LOADING,
@@ -11,7 +11,7 @@ const loadUser = (login) => {
 
 
     setTimeout(() => {
-      console.log("response received");
+      console.log("Returning mock user/orgs response");
 
       dispatch({
         type: USER_AND_ORGS_LOADED,
@@ -114,7 +114,7 @@ const loadUser = (login) => {
     }, 1000);
 
     setTimeout(() => {
-      console.log("response received");
+      console.log("Returning mock repos response");
 
       dispatch({
         type: USER_REPOS_LOADED,

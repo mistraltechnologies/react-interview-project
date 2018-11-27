@@ -9,8 +9,6 @@ import MessagePanel from "../components/MessagePanel/MessagePanel";
 class UserContainer extends Component {
 
   render() {
-    console.log(this.props);
-
     if (this.isError()) {
       return this.renderError();
     } else if (this.isUserLoaded()) {

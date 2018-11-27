@@ -6,7 +6,7 @@ import search from '../store/searchAction';
 import {withRouter} from "react-router";
 
 const NavBarContainer = (props) => {
-  console.log(props);
+
   const { history, search } = props;
 
   return (

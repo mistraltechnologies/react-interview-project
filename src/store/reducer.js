@@ -8,7 +8,7 @@ const rootReducer = (state = initialState, action) => {
       return state;
 
     case USER_LOADING: {
-      console.log("loading user " + action.login);
+      console.log(`Loading user '${action.login}`);
 
       return Object.assign({}, state, {
         user: null,
@@ -23,7 +23,7 @@ const rootReducer = (state = initialState, action) => {
       const {login, response} = action;
       const {user, orgs} = response;
 
-      console.log("loaded user " + login);
+      console.log(`Loaded user '${login}'`);
 
       if (login === state.targetUser) {
         return Object.assign({}, state, {
@@ -32,7 +32,7 @@ const rootReducer = (state = initialState, action) => {
         });
       } else {
         // this is not the droid you're looking for
-        console.log("ignoring loaded user " + user.name);
+        console.log(`Ignoring loaded user '${user.name}'`);
         return state;
       }
     }
@@ -40,7 +40,7 @@ const rootReducer = (state = initialState, action) => {
     case USER_REPOS_LOADED: {
       const {login, response: repos} = action;
 
-      console.log("loaded repos for user " + login);
+      console.log(`Loaded repos for user '${login}'`);
 
       if (login === state.targetUser) {
         return Object.assign({}, state, {
@@ -48,16 +48,16 @@ const rootReducer = (state = initialState, action) => {
         });
       } else {
         // this is not the droid you're looking for
-        console.log("ignoring repos for user " + login);
+        console.log(`Ignoring repos for user '${login}'`);
         return state;
       }
     }
 
     case API_ERROR:
-      const {code} = action;
+      const {error} = action;
 
-      console.log("API error - code:");
-      console.log(code);
+      console.log("API error:");
+      console.log(error);
 
       return Object.assign({}, state, {
         error: "error"

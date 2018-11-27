@@ -3,7 +3,7 @@ import {getRepos, getUserData} from '../github-api';
 
 const loadUser = (login) => {
   return (dispatch) => {
-    console.log("github call started");
+    console.log(`Initiating request to GitHub for user '${login}'`);
 
     dispatch({
       type: USER_LOADING,
@@ -20,7 +20,7 @@ const loadUser = (login) => {
         error =>
             dispatch({
               type: API_ERROR,
-              code: error
+              error: error
             })
     );
 
@@ -34,7 +34,7 @@ const loadUser = (login) => {
         error =>
             dispatch({
               type: API_ERROR,
-              code: error
+              error: error
             }));
   }
 };
