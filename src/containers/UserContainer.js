@@ -34,13 +34,22 @@ class UserContainer extends Component {
       this.props.loadUser(login);
     }
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    const login = this.props.match.params.user;
+    const targetUser = this.props.targetUser;
+    if (login !== targetUser) {
+      this.props.loadUser(login);
+    }
+  }
 }
 
 const mapStateToProps = state => {
   return {
     user: state.user,
     orgs: state.orgs,
-    repos: state.repos
+    repos: state.repos,
+    targetUser: state.targetUser
   }
 };
 
