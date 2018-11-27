@@ -39,17 +39,4 @@
     </entry>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
-  <component name="SbtLocalSettings">
-    <option name="modificationStamps">
-      <map>
-        <entry key="$PROJECT_DIR$/../../aevi/userregistration" value="1482064529000" />
-        <entry key="$PROJECT_DIR$/../../github/play-slick3-example" value="1482010249000" />
-        <entry key="$PROJECT_DIR$/../../projects/junk/sbt2" value="1482925539000" />
-        <entry key="$PROJECT_DIR$/../../projects/playphotocomp" value="1479822165000" />
-      </map>
-    </option>
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
 </project>
