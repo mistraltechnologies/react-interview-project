@@ -1,6 +1,6 @@
 # About GitHubber
 
-This project aims to satisfy the requirements of the alanrubin/react-interview-project by providing
+This project was written to satisfy the requirements of an client interview by providing
 a Web UI for retrieving repositories and organisations associated with a GitHub user.
 
 To search, type a user login name in the search field and press enter.
@@ -30,12 +30,6 @@ The following items from the bonus section have been implemented:
 - Use of React Router
 - State management (through Redux only)
 - Tools use (code formatting and linting through IntelliJ Idea, dockerization)
-
-It saddens me to say that due to time constraints, unit and integration tests are not implemented, but will follow shortly.
-
-## Hosting
-
-The project is up and running in a docker container on a Digital Ocean droplet [here](http://206.189.245.148/).
 
 ---
 
